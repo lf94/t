@@ -424,7 +424,7 @@ initialize(int *argc, char **argv[]) {
 	gtk_source_view_set_draw_spaces(source_view, GTK_SOURCE_DRAW_SPACES_TAB);
 	gtk_source_view_set_auto_indent(source_view, TRUE);
 	gtk_source_view_set_indent_on_tab(source_view, TRUE);
-	gtk_source_view_set_show_line_numbers(source_view, TRUE);
+	//gtk_source_view_set_show_line_numbers(source_view, TRUE);
 	gtk_container_add(GTK_CONTAINER(source_view_window), GTK_WIDGET(source_view));
 
 	gtk_box_pack_start(box, tag, FALSE, FALSE, 0);
