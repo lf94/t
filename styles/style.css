@@ -1,23 +1,26 @@
 .window, .editor, .tag {
-	background-color: #ffffff;
-	font-family: "Dejavu Sans";
-	font-size: 10px;
+	background-color: #fbfbfb;
+	font-family: "DejavuSans";
+	color: #000000;
+	font-size: 0.9em;
 }
 
 .window {
 }
 
 .tag {
-	border: 0px;
+	border: 0;
+	background-color: #f7f7f7;
+	background-image: none;
 }
 
 .tag:selected {
-	background-color: #EEEEEE;
+	background-color: #efefef;
 	color: #000000;
 }
 
 .editor:selected {
-	background-color: #E8E8E8;
+	background-color: #efefef;
 	color: #000000;
 }
 
@@ -44,4 +47,5 @@
 	background-color: #F0F0F0;
 	border-color: shade(#E0E0E0, 0.9);
 	border-width: 1px;
+	border-radius: 0;
 }

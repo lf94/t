@@ -8,7 +8,6 @@
 #include <gtksourceview/gtksourcesearchsettings.h>
 
 #define SCROLLBAR_WIDTH 8
-#define STYLE_PATH "./styles/style.css"
 
 typedef struct {
 	char *path;
@@ -342,9 +341,9 @@ tag_key_press(GtkWidget *widget, GdkEvent *event, gpointer data) {
 
 
 void
-load_css(void) {
+load_css(char *style_path) {
 	GtkCssProvider *css_provider = gtk_css_provider_get_default();
-	GFile *css_file = g_file_new_for_path(STYLE_PATH);
+	GFile *css_file = g_file_new_for_path("./styles/style.css");
 	GError *error = NULL;
 	gtk_css_provider_load_from_file(css_provider, css_file, &error);
 	g_object_unref(css_file);
@@ -376,7 +375,7 @@ initialize(int *argc, char **argv[]) {
 	if(file_container == NULL)
 		return NULL;
 
-	load_css();
+	load_css("/home/lee/dev/src/t/styles/style.css");
 
 	GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(window), file_container->path);
@@ -398,7 +397,12 @@ initialize(int *argc, char **argv[]) {
 		GTK_POLICY_NEVER, 
 		GTK_POLICY_ALWAYS
 	);
-	
+	GtkAdjustment *vadjust = gtk_scrolled_window_get_vadjustment(source_view_window);
+	gtk_adjustment_set_step_increment(vadjust, 12);
+	gtk_adjustment_set_page_increment(vadjust, 12);
+	gtk_adjustment_set_page_size(vadjust, 12);
+	gtk_scrolled_window_set_vadjustment(source_view_window, vadjust);
+
 	GtkSourceBuffer *source_view_text = gtk_source_buffer_new(NULL);
 	GtkTextBuffer *text_buffer = GTK_TEXT_BUFFER(source_view_text);
 	gtk_source_buffer_set_highlight_matching_brackets(source_view_text, FALSE);
@@ -430,13 +434,13 @@ initialize(int *argc, char **argv[]) {
 	gtk_box_pack_start(box, tag, FALSE, FALSE, 0);
 	gtk_box_pack_start(box, GTK_WIDGET(source_view_window), TRUE, TRUE, 0);
 	
-	gtk_widget_set_size_request(GTK_WIDGET(window), 640, 480);
+	gtk_widget_set_size_request(GTK_WIDGET(window), 480, 768-24);
 	gtk_box_pack_start(root_container, GTK_WIDGET(box), TRUE, TRUE, 0);
 	gtk_container_add(GTK_CONTAINER(window), GTK_WIDGET(root_container));
 
 	gtk_widget_grab_focus(GTK_WIDGET(source_view));
 
-	EditorState *editor_state = (EditorState *)malloc(sizeof(EditorState));
+	EditorState *editor_state = malloc(sizeof(EditorState));
 	editor_state->root = window;
 	editor_state->view = source_view;
 	editor_state->buffer = source_view_text;
@@ -455,7 +459,7 @@ initialize(int *argc, char **argv[]) {
 int
 main(int argc, char *argv[]) {
 	EditorState *state = initialize(&argc, &argv);
-	if(state->root) {
+	if(state) {
 		event_loop(state);
 	}
 	return 1;
