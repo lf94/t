@@ -3,11 +3,11 @@ This document is a compilation of research that others have carried out on reada
 A survey with a rather small sample set that describes color preference for both long and short texts; black and white wins.
 http://www.laurenscharff.com/research/survreslts.html
 
-A paper looking at fonts and colors.
+A paper looking at fonts and colors. sans-serif of course wins.
 http://www.laurenscharff.com/research/AHNCUR.html
 
 More study on why "bright on dark" colorschemes are bad for you.
 http://graphicdesign.stackexchange.com/a/15152
 
-CPL is Characters Per Line. Why does this matter? Because your eyes lose focus on lines that are too long. The optimal range is 50-75 cpl. t used to use the average, 66 cpl, but has given that up because resizing the editor window is necessary for flexibility.
+CPL is Characters Per Line. Why does this matter? Because your eyes lose focus on lines that are too long. The optimal range is 50-75 cpl. tyreese used to use the average, 66 cpl, but has given that up because resizing the editor window is necessary for some code bases. Luckily, most code is written at 80 CPL or less.
 http://baymard.com/blog/line-length-readability

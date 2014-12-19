@@ -1,6 +1,6 @@
-t - type.
+tyreese - type.
 
-t is a text editor aimed to be anything but annoying.
+tyreese is a text editor aimed to be anything but annoying.
 
 Design goals:
 * Follows KISS Philosophy
@@ -9,8 +9,12 @@ Design goals:
 
 Features:
 * Command-line to access system
-* Chording (coming soon)
 * Auto-indenting
-* Superior typography
+* Superior typography (read research.txt)
 * Minimal command language (go to line, find text regexp object, run command)
 
+Future:
+* Chording
+* Sam command language
+* Auto-complete
+* Semantic highlighting

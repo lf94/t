@@ -59,7 +59,7 @@ GtkSourceView *
 init_buffer_view(GtkSourceBuffer *source_buffer) {
 	GtkSourceView *source_view = GTK_SOURCE_VIEW(gtk_source_view_new_with_buffer(source_buffer));
 	set_class(GTK_WIDGET(source_view), "editor");
-	gtk_text_view_set_left_margin(GTK_TEXT_VIEW(source_view), 0);
+	gtk_text_view_set_left_margin(GTK_TEXT_VIEW(source_view), 4);
 	gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(source_view), GTK_WRAP_CHAR);
 	gtk_source_view_set_draw_spaces(source_view, GTK_SOURCE_DRAW_SPACES_TAB);
 	gtk_source_view_set_auto_indent(source_view, TRUE);
