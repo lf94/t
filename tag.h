@@ -1,0 +1,14 @@
+void toggle_tag(EditorState *);
+void select_range(EditorState *state, GtkTextIter *, GtkTextIter *);
+void next_occurrence(EditorState *);
+void change_occurrence(EditorState *);
+void append_to_occurrence(EditorState *);
+void insert_before_occurrence(EditorState *);
+void delect_occurrence(EditorState *);
+void disengage_search_mode(EditorState *);
+void execute_command(const gchar, EditorState *);
+void engage_search_mode(EditorState *, const gchar*);
+void go_to_line(EditorState *, const gchar *);
+gboolean execute_os_cmd(EditorState *);
+gboolean window_key_press(GtkWidget *, GdkEvent *, gpointer);
+gboolean tag_key_press(GtkWidget *, GdkEvent *, gpointer);
