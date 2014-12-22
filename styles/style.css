@@ -1,5 +1,5 @@
 .window, .editor, .tag {
-	background-color: #fbfbfb;
+	background-color: #ffffff;
 	font-family: "DejavuSans";
 	color: #000000;
 	font-size: 0.9em;
@@ -28,14 +28,13 @@
 .scrollbar.vertical {
     -GtkScrollbar-has-backward-stepper: 0px;
     -GtkScrollbar-has-forward-stepper: 0px;
-    -GtkRange-slider-width: 8px;
+    -GtkRange-slider-width: 8em;
     border-image: none;
 }
 
 .scrollbar.trough,
 .scrollbar.trough.vertical {
-    background-color: #E0E0E0;
-    border-color: shade(#E0E0E0, 0.9);
+    background-color: #FFFFFF;
 }
 
 .scrollbar.slider,
@@ -44,8 +43,8 @@
 .scrollbar.slider.vertical,
 .scrollbar.slider.vertical:hover,
 .scrollbar.button.vertical {
-	background-color: #F0F0F0;
+	background-color: #FBFBFB;
 	border-color: shade(#E0E0E0, 0.9);
-	border-width: 1px;
+	border-width: 0.1em;
 	border-radius: 0;
 }

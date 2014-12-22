@@ -112,7 +112,7 @@ execute_os_cmd(EditorState *state) {
 	
 	if(cmd[0] == '/') {
 		engage_search_mode(state, cmd);
-	} else if(cmd[0] == ':') {
+	} else {
 		go_to_line(state, cmd);
 	}
 	

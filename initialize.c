@@ -23,6 +23,7 @@ init_tag() {
 	return GTK_ENTRY(tag);
 }
 
+
 GtkScrolledWindow *
 init_scroll_container() {
 	GtkWidget *scroll_container = gtk_scrolled_window_new(NULL, NULL);
@@ -75,7 +76,7 @@ initialize(int *argc, char **argv[]) {
 
 	FileContainer* file_container = read_file((*argv)[1]);
 
-	load_css("/home/lee/dev/src/t/styles/style.css");
+	load_css("/home/lee/dev/src/tyreese/styles/style.css");
 
 	/* INITIALIZE COMPONENTS */
 	GtkWidget *main_window = init_window(file_container);
@@ -89,7 +90,6 @@ initialize(int *argc, char **argv[]) {
 	GtkSourceView *source_view = init_buffer_view(source_buffer);
 	GtkSourceSearchSettings *search_settings = gtk_source_search_settings_new();
 	gtk_source_search_settings_set_regex_enabled (search_settings, TRUE);
-	
 
 	/* PACK COMPONENTS */
 	gtk_container_add(scroll_container, GTK_WIDGET(source_view));

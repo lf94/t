@@ -58,7 +58,7 @@ write_file(FileContainer *fc, GtkTextView *view, GtkTextBuffer *buffer) {
 void
 load_css(char *style_path) {
 	GtkCssProvider *css_provider = gtk_css_provider_get_default();
-	GFile *css_file = g_file_new_for_path("./styles/style.css");
+	GFile *css_file = g_file_new_for_path(style_path);
 	GError *error = NULL;
 	gtk_css_provider_load_from_file(css_provider, css_file, &error);
 	g_object_unref(css_file);
@@ -132,7 +132,7 @@ execute_cmd(EditorState *state) {
 	
 	if(cmd[0] == '/') {
 		engage_search_mode(state, cmd);
-	} else if(cmd[0] == ':') {
+	} else {
 		go_to_line(state, cmd);
 	}
 	
